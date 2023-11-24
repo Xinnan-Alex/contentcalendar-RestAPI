@@ -21,23 +21,4 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(ContentRepository contentRepository){
-		return args -> {
-			// Insert data into database
-
-			Content content = new Content(
-					null,
-					"Java Spring Boot Tutorial",
-					"Dingi Majingi",
-					Status.IDEA,
-					Type.VIDEO,
-					LocalDateTime.now(),
-					null,
-					"");
-
-			contentRepository.save(content);
-		};
-	}
-
 }
